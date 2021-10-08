@@ -7,6 +7,7 @@ ruby "3.0.2"
 gem "rails", "~> 7.0.0.alpha2"
 
 gem 'sqlite3'
+gem 'postgresql'
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
 

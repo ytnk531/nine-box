@@ -52,4 +52,5 @@ production:
   <<: *default
   database: untitled_production
   username: untitled
+  adapter: postgresql
   password: <%= ENV["UNTITLED_DATABASE_PASSWORD"] %>
