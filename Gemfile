@@ -6,6 +6,7 @@ ruby "3.0.2"
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.0.alpha2"
 
+gem 'sqlite3'
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
 
