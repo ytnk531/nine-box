@@ -1,0 +1,7 @@
+<p>ボックスを選択してください</p>
+<% (1..9).each do |i| %>
+  <%= link_to dashboards_path(new_answer: i), method: :post do %>
+    box
+  <% end %>
+<% end %>
+
