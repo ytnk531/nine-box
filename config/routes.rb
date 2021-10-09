@@ -5,5 +5,9 @@ Rails.application.routes.draw do
   # root "articles#new"
   root 'dashboards#new'
 
-  resources :dashboards
+  resources :dashboards do
+    collection do
+      post :select
+    end
+  end
 end

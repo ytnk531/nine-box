@@ -1,7 +1,8 @@
-<p>ボックスを選択してください</p>
+<%= flash[:notice] %>
+<p>新しいボックスをセットしてください</p>
 <% (1..9).each do |i| %>
   <%= link_to dashboards_path(new_answer: i), method: :post do %>
-    box
+    box <%= i %>
   <% end %>
 <% end %>
 
