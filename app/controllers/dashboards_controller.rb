@@ -1,14 +1,17 @@
 class DashboardsController < ApplicationController
   def new
-    state = State.new.detect
-    render state.selector_view
+    state = Game.new.detect_state
+    render state.view(current_user)
   end
 
   def select
-    state = State.new.detect
-    state.next(params[:position].to_i)
-    flash.now[:notice] = state.notice
-    render state.view
+    state = Game.new.detect_state
+    state.next(params[:position].to_i, current_user)
+    state.message.each do |k, v|
+      flash.now[k] = v
+    end
+
+    render state.view(current_user)
 end
 
   def create

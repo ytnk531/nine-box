@@ -1,3 +1,14 @@
+GIT
+  remote: https://github.com/heartcombo/devise.git
+  revision: 8593801130f2df94a50863b5db535c272b00efe1
+  specs:
+    devise (4.8.0)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 4.1.0)
+      responders
+      warden (~> 1.2.3)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -61,6 +72,7 @@ GEM
       tzinfo (~> 2.0)
     addressable (2.8.0)
       public_suffix (>= 2.0.2, < 5.0)
+    bcrypt (3.1.16)
     bindex (0.8.1)
     bootsnap (1.9.1)
       msgpack (~> 1.0)
@@ -80,6 +92,8 @@ GEM
       irb (>= 1.3.6)
       reline (>= 0.2.7)
     erubi (1.10.0)
+    ffi (1.15.4)
+    ffi (1.15.4-x64-mingw32)
     globalid (0.5.2)
       activesupport (>= 5.0)
     i18n (1.8.10)
@@ -110,6 +124,7 @@ GEM
       racc (~> 1.4)
     nokogiri (1.12.5-x86_64-linux)
       racc (~> 1.4)
+    orm_adapter (0.5.0)
     pg (1.2.3)
     public_suffix (4.0.6)
     puma (5.5.0)
@@ -149,6 +164,10 @@ GEM
     regexp_parser (2.1.1)
     reline (0.2.7)
       io-console (~> 0.5)
+    responders (3.0.1)
+      actionpack (>= 5.0)
+      railties (>= 5.0)
+    rexml (3.2.5)
     rubyzip (2.3.2)
     selenium-webdriver (3.142.7)
       childprocess (>= 0.5, < 4.0)
@@ -161,11 +180,15 @@ GEM
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
     sqlite3 (1.4.2)
+    tailwindcss-rails (0.5.1)
+      rails (>= 6.0.0)
     thor (1.1.0)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
     tzinfo-data (1.2021.3)
       tzinfo (>= 1.0.0)
+    warden (1.2.9)
+      rack (>= 2.0.9)
     web-console (4.1.0)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -191,13 +214,17 @@ DEPENDENCIES
   bootsnap (>= 1.4.4)
   capybara (>= 3.26)
   debug (>= 1.0.0)
+  devise!
+  ffi
   importmap-rails
   jbuilder (~> 2.7)
   pg
   puma (~> 5.0)
   rails (~> 7.0.0.alpha2)
+  rexml
   selenium-webdriver
   sqlite3
+  tailwindcss-rails (~> 0.5.1)
   tzinfo-data
   web-console (>= 4.1.0)
   webdrivers

@@ -23,6 +23,7 @@
 !/storage/.keep
 
 /public/assets
-
+untitled_development
+untitled_test
 # Ignore master key for decrypting credentials and more.
 /config/master.key
