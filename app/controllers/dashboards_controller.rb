@@ -1,26 +1,15 @@
 class DashboardsController < ApplicationController
   def new
-    @answer = Answer.last
-    if @answer
-      render 'select'
-    else
-      render 'new'
-    end
+    state = State.new.detect
+    render state.selector_view
   end
 
   def select
-    @selection = params[:position]
-    pp @selection
-    pp Answer.last.position
-    if @selection == Answer.last.position.to_s
-      Answer.last.destroy!
-      flash.now[:notice] = "正解。新しい答えを設定してください"
-      render 'new'
-    else
-      flash.now[:notice] = "不正解"
-      render 'select'
-    end
-  end
+    state = State.new.detect
+    state.next(params[:position].to_i)
+    flash.now[:notice] = state.notice
+    render state.view
+end
 
   def create
     Answer.create(position: params[:new_answer])
