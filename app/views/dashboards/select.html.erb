@@ -1,4 +1,3 @@
-<%= flash[:notice] %>
 <p>ボックスを選択してください</p>
 <% (1..9).each do |i| %>
   <%= link_to select_dashboards_path(position: i), method: :post do %>
