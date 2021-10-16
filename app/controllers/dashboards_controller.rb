@@ -1,11 +1,11 @@
 class DashboardsController < ApplicationController
   def new
-    state = State.new.detect
+    state = Game.new.detect
     render state.selector_view
   end
 
   def select
-    state = State.new.detect
+    state = Game.new.detect
     state.next(params[:position].to_i)
     flash.now[:notice] = state.notice
     render state.view

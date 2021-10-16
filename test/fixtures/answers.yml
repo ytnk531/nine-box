@@ -2,6 +2,8 @@
 
 one:
   position: 1
+  solver: one
 
 two:
   position: 1
+  solver: two
