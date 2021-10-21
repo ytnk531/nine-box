@@ -1,23 +1,26 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Untitled</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <title>Untitled</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= stylesheet_link_tag "inter-font", "data-turbo-track": "reload" %>
+  <%= stylesheet_link_tag "tailwind", "data-turbo-track": "reload" %>
 
-    <%= stylesheet_link_tag "application" %>
-    <%= javascript_importmap_tags %>
-  </head>
+  <%= stylesheet_link_tag "application" %>
+  <%= javascript_importmap_tags %>
+</head>
 
-  <body>
-    <% if current_user %>
-    <ul>
-      <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
-    </ul>
-    <% end %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-
-    <%= yield %>
-  </body>
+<body>
+<% if current_user %>
+  <ul>
+    <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+  </ul>
+<% end %>
+<p class=""><%= notice %></p>
+<p class="alert"><%= alert %></p>
+<main class="container mx-auto">
+  <%= yield %>
+</main>
+</body>
 </html>

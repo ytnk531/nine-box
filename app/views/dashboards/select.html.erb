@@ -1,7 +1,12 @@
 <p>ボックスを選択してください</p>
-<% (1..9).each do |i| %>
-  <%= link_to select_dashboards_path(position: i), method: :post do %>
-    box <%= i %>
+<div class="grid grid-cols-3 gap-4">
+  <% (1..9).each do |i| %>
+    <%= link_to select_dashboards_path(position: i), method: :post do %>
+      <div class="bg-white shadow-md h-12">
+        <div class="mx-auto x-10">
+          box <%= i %>
+        </div>
+      </div>
+    <% end %>
   <% end %>
-<% end %>
-
+</div>
