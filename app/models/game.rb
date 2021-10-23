@@ -69,6 +69,6 @@ class SettingAnswerState
   end
 
   def message
-    { notice: "正解。新しい答えを設定してください" }
+    { notice: "正解です!" }
   end
 end
