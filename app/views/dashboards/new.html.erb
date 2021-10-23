@@ -1,6 +1,15 @@
-<p>新しいボックスをセットしてください</p>
-<% (1..9).each do |i| %>
-  <%= link_to dashboards_path(new_answer: i), method: :post do %>
-    box <%= i %>
+<main>
+  <div class="border-2 border-gray-400 rounded-md p-3">
+    新しいボックスをセットしてください
+  </div>
+  <div class="grid grid-cols-3 gap-4 mt-10">
+  <% (1..9).each do |i| %>
+    <%= link_to dashboards_path(new_answer: i), method: :post, class: "mx-auto" do %>
+      <div class="h-32 w-32 bg-white shadow-md flex justify-center items-center rounded-md
+                  transform hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-xl">
+        <p class="bold">box <%= i %></p>
+      </div>
+    <% end %>
   <% end %>
-<% end %>
+  </div>
+</main>

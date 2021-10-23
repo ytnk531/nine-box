@@ -1,12 +1,15 @@
-<p>ボックスを選択してください</p>
-<div class="grid grid-cols-3 gap-4">
-  <% (1..9).each do |i| %>
-    <%= link_to select_dashboards_path(position: i), method: :post do %>
-      <div class="bg-white shadow-md h-12">
-        <div class="mx-auto x-10">
-          box <%= i %>
+<main>
+  <div class="border-2 border-gray-400 rounded-md p-3">
+    ボックスを選択してください
+  </div>
+  <div class="grid grid-cols-3 gap-4 mt-10">
+    <% (1..9).each do |i| %>
+      <%= link_to select_dashboards_path(position: i), method: :post, class: "mx-auto" do %>
+        <div class="h-32 w-32 bg-white shadow-md flex justify-center items-center rounded-md
+                    transform hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-xl">
+          <p class="bold">box <%= i %></p>
         </div>
-      </div>
+      <% end %>
     <% end %>
-  <% end %>
-</div>
+  </div>
+</main>

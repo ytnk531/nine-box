@@ -4,7 +4,7 @@ class Game
     @strategy = nil
   end
 
-  def detect
+  def detect_state
     @strategy = if Answer.all.empty? || Answer.last.solver.present?
                   SettingAnswerState.new
                 else
@@ -17,8 +17,8 @@ class Game
     @strategy = @strategy.transpose(input, user)
   end
 
-  def notice
-    @strategy.notice
+  def message
+    @strategy.message
   end
 
   def view(user)
@@ -44,8 +44,8 @@ class InputtingSelectionState
     'select'
   end
 
-  def notice
-    "不正解"
+  def message
+    { alert: "不正解" }
   end
 end
 
@@ -68,7 +68,7 @@ class SettingAnswerState
     end
   end
 
-  def notice
-    "正解。新しい答えを設定してください"
+  def message
+    { notice: "正解。新しい答えを設定してください" }
   end
 end
