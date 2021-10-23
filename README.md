@@ -1,24 +1,9 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 概要
+9個の箱の中にある当たりを見つけるゲーム。
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## TODOリスト
+- [ ] ログインしなくていいようにする
+- [ ] 当たりを設置する予定の人がしばらく設置しなかったら他の人が設置できるようにする
+- [ ] tailwindしんどいので、postcss入れて使い勝手よくするか脱tailwindする
