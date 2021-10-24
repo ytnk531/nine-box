@@ -52,6 +52,7 @@
     <orderEntry type="library" scope="PROVIDED" name="cssbundling-rails (v0.2.4, ruby-3.0.2-p107) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="debug (v1.2.4, ruby-3.0.2-p107) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="devise (v4.8.0@859380, ruby-3.0.2-p107) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="devise-i18n (v1.10.0, ruby-3.0.2-p107) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="erubi (v1.10.0, ruby-3.0.2-p107) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="ffi (v1.15.4, ruby-3.0.2-p107) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="globalid (v0.5.2, ruby-3.0.2-p107) [gem]" level="application" />
@@ -79,6 +80,7 @@
     <orderEntry type="library" scope="PROVIDED" name="rails (v7.0.0.alpha2, ruby-3.0.2-p107) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rails-dom-testing (v2.0.3, ruby-3.0.2-p107) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rails-html-sanitizer (v1.4.2, ruby-3.0.2-p107) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rails-i18n (v6.0.0, ruby-3.0.2-p107) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="railties (v7.0.0.alpha2, ruby-3.0.2-p107) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rake (v13.0.6, ruby-3.0.2-p107) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rbs (v1.0.4, ruby-3.0.2-p107) [gem]" level="application" />
@@ -91,7 +93,6 @@
     <orderEntry type="library" scope="PROVIDED" name="sprockets (v4.0.2, ruby-3.0.2-p107) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sprockets-rails (v3.2.2, ruby-3.0.2-p107) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sqlite3 (v1.4.2, ruby-3.0.2-p107) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="tailwindcss-rails (v0.5.1, ruby-3.0.2-p107) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="thor (v1.1.0, ruby-3.0.2-p107) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="tzinfo (v2.0.4, ruby-3.0.2-p107) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="tzinfo-data (v1.2021.3, ruby-3.0.2-p107) [gem]" level="application" />
@@ -118,6 +119,8 @@
         <option value="controller" />
         <option value="devise" />
         <option value="devise:controllers" />
+        <option value="devise:i18n:locale" />
+        <option value="devise:i18n:views" />
         <option value="devise:install" />
         <option value="devise:views" />
         <option value="generator" />
@@ -154,6 +157,8 @@
         <option value="controller" />
         <option value="devise" />
         <option value="devise:controllers" />
+        <option value="devise:i18n:locale" />
+        <option value="devise:i18n:views" />
         <option value="devise:install" />
         <option value="devise:views" />
         <option value="generator" />
