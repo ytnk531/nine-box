@@ -18,11 +18,14 @@ gem 'importmap-rails'
 
 gem 'ffi'
 gem 'rexml'
+gem 'devise-i18n'
+gem 'rails-i18n', '~> 6.0.0'
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", ">= 1.4.4", require: false
+
 gem 'cssbundling-rails'
 gem 'devise', github: 'heartcombo/devise'
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]

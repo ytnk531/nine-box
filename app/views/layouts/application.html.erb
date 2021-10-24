@@ -1,25 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Untitled</title>
+  <title>nine boxes</title>
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
+  <%= stylesheet_link_tag "inter-font", "data-turbo-track": "reload" %>
+  <%= stylesheet_link_tag "tailwind", "data-turbo-track": "reload" %>
 
-  <%= stylesheet_link_tag "application" %>
-  <%= javascript_importmap_tags %>
-</head>
+    <%= stylesheet_link_tag "application" %>
+    <%= javascript_importmap_tags %>
+  </head>
 
 <body class="bg-blue-200 text-gray-700">
-<header class="bg-indigo-50 pb-2">
-  <nav class="flex justify-between container mx-auto ">
-    <span class="font-bold">nine boxes</span>
-    <% if current_user %>
-      <ul>
-        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
-      </ul>
-    <% end %>
-  </nav>
-</header>
+
+<%= render 'layouts/header' %>
 <div class="mx-auto">
   <% if notice.present? %>
     <p class="bg-green-100 text-gray-600 p-2"><%= notice %></p>
