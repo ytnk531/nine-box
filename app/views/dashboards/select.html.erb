@@ -1,15 +1,4 @@
 <main>
-  <div class="bg-white border border-gray-400 rounded-md p-3">
-    どこかのだれかが、9個の箱のなかの1つを正解として設定しました。正解の箱を選んでください。
-  </div>
-  <div class="grid grid-cols-3 gap-4 mt-10">
-    <% (1..9).each do |i| %>
-      <%= link_to select_dashboards_path(position: i), method: :post, class: "mx-auto" do %>
-        <div class="h-32 w-32 bg-white shadow-md flex justify-center items-center rounded-md
-                    transform hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-xl">
-          <p class="bold">box <%= i %></p>
-        </div>
-      <% end %>
-    <% end %>
-  </div>
+  <%= render 'message', message: "どこかのだれかが、9個の箱のなかの1つを正解として設定しました。正解の箱を選んでください。" %>
+  <%= render 'boxes', linker: -> (i) { select_dashboards_path(position: i) } %>
 </main>
