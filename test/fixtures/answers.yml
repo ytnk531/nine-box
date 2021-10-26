@@ -2,8 +2,8 @@
 
 one:
   position: 1
-  solver: one
+  solver_id: 0002
 
 two:
-  position: 1
-  solver: two
+  position: 2
+  solver_id: 0002

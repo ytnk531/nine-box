@@ -1,3 +1,5 @@
 class Answer < ApplicationRecord
-  belongs_to :solver, class_name: 'User', optional: true
+  def solver
+    solver_id && Applicant.new(solver_id)
+  end
 end

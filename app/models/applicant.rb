@@ -8,4 +8,8 @@ class Applicant
   def self.new_id
     SecureRandom.uuid
   end
+
+  def ==(other)
+    other.id == id
+  end
 end
