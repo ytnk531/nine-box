@@ -28,4 +28,7 @@ class StateTest < ActiveSupport::TestCase
 
     assert_equal 'select', state.view(Applicant.new("001"))
   end
+
+  test "" do
+  end
 end
