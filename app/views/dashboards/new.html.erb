@@ -1,4 +1,4 @@
 <main>
   <%= render 'message', message: "新しい正解を設定するため、箱を一つ選んでください。" %>
-  <%= render 'boxes', linker: -> (i) { dashboards_path(new_answer: i) } %>
+  <%= render 'boxes', path: dashboards_path, key: :new_answer %>
 </main>

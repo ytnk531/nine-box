@@ -4,4 +4,7 @@
 # Use npm packages from a JavaScript CDN by running ./bin/importmap
 
 pin "application"
-pin "@rails/ujs", to: "https://ga.jspm.io/npm:@rails/ujs@6.1.4-1/lib/assets/compiled/rails-ujs.js"
+pin "@hotwired/stimulus", to: "stimulus.js"
+pin "@hotwired/stimulus-loading", to: "stimulus-loading.js"
+pin_all_from "app/javascript/controllers", under: "controllers"
+pin "@hotwired/turbo-rails", to: "turbo.js"

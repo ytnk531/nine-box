@@ -1,4 +1,4 @@
 <main>
   <%= render 'message', message: "どこかのだれかが、9個の箱のなかの1つを正解として設定しました。正解の箱を選んでください。" %>
-  <%= render 'boxes', linker: -> (i) { select_dashboards_path(position: i) } %>
+  <%= render 'boxes', path: select_dashboards_path, key: :position %>
 </main>

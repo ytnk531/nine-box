@@ -4,6 +4,10 @@ class DashboardsController < ApplicationController
     render state.view(current_user)
   end
 
+  def show
+    redirect_to new_dashboard_path
+  end
+
   def select
     state = Game.new.detect_state
     state.next(params[:position].to_i, current_user)
