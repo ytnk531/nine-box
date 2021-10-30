@@ -1,5 +1,7 @@
 # ゲームの状態を表す
 class Game
+  attr_reader :state
+
   def initialize
     @state = nil
   end

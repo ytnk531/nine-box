@@ -16,8 +16,10 @@ class DashboardsController < ApplicationController
     game.next(box.position, current_user)
 
     respond_to do |format|
-      format.turbo_stream do
-        render turbo_stream: turbo_stream.replace(box.dom_id, partial: "dashboards/box", locals: { b: box})
+      if game.state.instance_of?(InputtingSelectionState)
+        format.turbo_stream do
+          render turbo_stream: turbo_stream.replace(box.dom_id, partial: "dashboards/box", locals: { b: box })
+        end
       end
       format.html { redirect_to new_dashboard_path, **game.message }
     end
