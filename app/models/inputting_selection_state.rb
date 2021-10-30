@@ -5,6 +5,7 @@ class InputtingSelectionState
       Answer.last.update(solver_id: user.id)
       SettingAnswerState.new
     else
+      TouchedPosition.create(answerer_id: user.id, position: input, answer: Answer.last)
       InputtingSelectionState.new
     end
   end

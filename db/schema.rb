@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_26_134140) do
+ActiveRecord::Schema.define(version: 2021_10_30_093137) do
 
   create_table "answers", force: :cascade do |t|
     t.integer "position"
@@ -19,4 +19,14 @@ ActiveRecord::Schema.define(version: 2021_10_26_134140) do
     t.string "solver_id"
   end
 
+  create_table "touched_positions", force: :cascade do |t|
+    t.string "answerer_id"
+    t.integer "answer_id", null: false
+    t.integer "position"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["answer_id"], name: "index_touched_positions_on_answer_id"
+  end
+
+  add_foreign_key "touched_positions", "answers"
 end

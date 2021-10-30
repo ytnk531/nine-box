@@ -99,6 +99,7 @@ GEM
       rails (>= 6.0.0)
       stimulus-rails
       turbo-rails
+    html_class (0.1.0)
     i18n (1.8.10)
       concurrent-ruby (~> 1.0)
     importmap-rails (0.7.6)
@@ -226,6 +227,7 @@ DEPENDENCIES
   devise-i18n
   ffi
   hotwire-rails
+  html_class
   importmap-rails
   jbuilder (~> 2.7)
   pg
