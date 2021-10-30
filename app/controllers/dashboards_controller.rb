@@ -11,12 +11,9 @@ class DashboardsController < ApplicationController
   def select
     state = Game.new.detect_state
     state.next(params[:position].to_i, current_user)
-    state.message.each do |k, v|
-      flash.now[k] = v
-    end
 
-    render state.view(current_user)
-end
+    redirect_to new_dashboard_path, **state.message
+  end
 
   def create
     Answer.create(position: params[:new_answer])

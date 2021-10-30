@@ -1,7 +1,7 @@
 <div class="grid grid-cols-3 gap-4 mt-10">
 
   <% (1..9).each do |i| %>
-    <%= button_to path, params: {key => i}, method: :post, form_class: "mx-auto", data: { turbo: "false" } do %>
+    <%= button_to path, params: {key => i}, method: :post, form_class: "mx-auto" do %>
       <div class="
             h-32 w-32
             flex justify-center items-center rounded-md bg-white shadow-md
