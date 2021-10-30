@@ -1,13 +1,7 @@
 <div class="grid grid-cols-3 gap-4 mt-10">
   <% @boxes.each do |b| %>
     <%= button_to path, params: {key => b.position}, method: :post, form_class: "mx-auto" do %>
-      <div class="<%= html_class "
-            h-32 w-32
-            flex justify-center items-center rounded-md bg-white shadow-md
-            transform hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-xl
-      ", "bg-pink-100": -> { b.answered?} %>">
-        <p class="bold">box <%= b.position %></p>
-      </div>
+      <%= render 'box', b: b %>
     <% end %>
   <% end %>
 </div>

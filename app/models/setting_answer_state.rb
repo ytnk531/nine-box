@@ -15,4 +15,8 @@ class SettingAnswerState
   def message
     { notice: "正解です!" }
   end
+
+  def answer
+    Answer.new
+  end
 end

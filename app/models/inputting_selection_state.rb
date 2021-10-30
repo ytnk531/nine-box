@@ -17,4 +17,8 @@ class InputtingSelectionState
   def message
     { alert: "不正解" }
   end
+
+  def answer
+    Answer.last
+  end
 end

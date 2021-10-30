@@ -15,6 +15,10 @@ class Box
     )
   end
 
+  def dom_id
+    "box_#{position}"
+  end
+
   private
 
   attr_reader :answer, :answerer_id

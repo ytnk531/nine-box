@@ -1,9 +1,9 @@
 class DashboardsController < ApplicationController
   def new
-    state = Game.new.detect_state
-    answer = Answer.last
-    @boxes = (1..9).map { |pos| Box.new(pos, answer, current_user.id) }
-    render state.view(current_user)
+    game = Game.new.detect_state
+    @boxes = (1..9).map { |pos| Box.new(pos, game.answer, current_user.id) }
+
+    render game.view(current_user)
   end
 
   def show
@@ -12,9 +12,15 @@ class DashboardsController < ApplicationController
 
   def select
     game = Game.new.detect_state
-    game.next(params[:position].to_i, current_user)
+    box = game.box_at(params[:position].to_i, current_user.id)
+    game.next(box.position, current_user)
 
-    redirect_to new_dashboard_path, **game.message
+    respond_to do |format|
+      format.turbo_stream do
+        render turbo_stream: turbo_stream.replace(box.dom_id, partial: "dashboards/box", locals: { b: box})
+      end
+      format.html { redirect_to new_dashboard_path, **game.message }
+    end
   end
 
   def create

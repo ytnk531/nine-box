@@ -1,32 +1,40 @@
 # ゲームの状態を表す
 class Game
   def initialize
-    @strategy = nil
+    @state = nil
   end
 
   def detect_state
-    @strategy = if Answer.all.empty? || Answer.last.solver.present?
+    @state = if Answer.all.empty? || Answer.last.solver.present?
                   SettingAnswerState.new
-                else
+             else
                   InputtingSelectionState.new
-                end
+             end
     self
   end
 
   def next(input, user)
-    @strategy = @strategy.transpose(input, user)
+    @state = @state.transpose(input, user)
   end
 
   def message
-    @strategy.message
+    @state.message
   end
 
   def view(user)
-    @strategy.view(user)
+    @state.view(user)
   end
 
   def selector_view
-    @strategy.selector_view
+    @state.selector_view
+  end
+
+  def answer
+    @state.answer
+  end
+
+  def box_at(position, answerer_id)
+    Box.new(position, answer, answerer_id)
   end
 end
 
