@@ -3,6 +3,9 @@
 ## 概要
 9個の箱の中にある当たりを見つけるゲーム。
 
+https://nine-boxes.herokuapp.com/
+で稼働中。
+
 ## TODOリスト
 - [x] tailwindしんどいので、postcss入れて使い勝手よくするか脱tailwindする
 - [x] ログインしなくていいようにする
