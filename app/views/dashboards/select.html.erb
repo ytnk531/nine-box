@@ -1,4 +1,5 @@
 <main>
+  <%= turbo_stream_from :boxes %>
   <%= render 'message', message: "どこかのだれかが、9個の箱のなかの1つを正解として設定しました。正解の箱を選んでください。" %>
-  <%= render 'boxes', path: select_dashboards_path, key: :position %>
+  <%= render 'boxes', path: select_dashboards_path, key: :position, boxes: @boxes %>
 </main>

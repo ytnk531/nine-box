@@ -35,8 +35,12 @@ class Game
     @state.answer
   end
 
-  def box_at(position, answerer_id)
-    Box.new(position, answer, answerer_id)
+  def box_at(position)
+    boxes[position - 1]
+  end
+
+  def boxes
+    (1..9).map { |pos| Box.new(pos, answer) }
   end
 end
 

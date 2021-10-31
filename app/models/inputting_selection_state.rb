@@ -1,4 +1,3 @@
-
 class InputtingSelectionState
   def transpose(input, user)
     if input.to_i == Answer.last.position

@@ -1,7 +1,7 @@
 class DashboardsController < ApplicationController
   def new
     game = Game.new.detect_state
-    @boxes = (1..9).map { |pos| Box.new(pos, game.answer, current_user.id) }
+    @boxes = game.boxes
 
     render game.view(current_user)
   end
@@ -12,15 +12,15 @@ class DashboardsController < ApplicationController
 
   def select
     game = Game.new.detect_state
-    box = game.box_at(params[:position].to_i, current_user.id)
+    box = game.box_at(params[:position].to_i)
     game.next(box.position, current_user)
 
+    game.boxes.each do |b|
+      Turbo::StreamsChannel.broadcast_replace_to(
+        :boxes, target: b.dom_id, partial: "dashboards/box", locals: { b: b }
+      )
+    end
     respond_to do |format|
-      if game.state.instance_of?(InputtingSelectionState)
-        format.turbo_stream do
-          render turbo_stream: turbo_stream.replace(box.dom_id, partial: "dashboards/box", locals: { b: box })
-        end
-      end
       format.html { redirect_to new_dashboard_path, **game.message }
     end
   end

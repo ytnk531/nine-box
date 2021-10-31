@@ -1,4 +1,5 @@
 <main>
+  <%= turbo_stream_from :boxes %>
   <%= render 'message', message: "新しい正解を設定するため、箱を一つ選んでください。" %>
-  <%= render 'boxes', path: dashboards_path, key: :new_answer %>
+  <%= render 'boxes', path: dashboards_path, key: :new_answer, boxes: @boxes %>
 </main>

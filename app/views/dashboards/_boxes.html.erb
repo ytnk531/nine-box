@@ -1,5 +1,5 @@
-<div class="grid grid-cols-3 gap-4 mt-10">
-  <% @boxes.each do |b| %>
+<div class="grid grid-cols-3 gap-4 mt-10" id="boxes">
+  <% boxes.each do |b| %>
     <%= button_to path, params: {key => b.position}, method: :post, form_class: "mx-auto" do %>
       <%= render 'box', b: b %>
     <% end %>
